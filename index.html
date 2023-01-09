@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Gatwick - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Gatwick - v4.9.1
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      
+
+      <a href="index.html" class="logo"><img src="training/images/logo.jpg" alt="" class="img-fluid"></a>
+      <div><h1 class="logo"><a href="index.html">Gatwick</a></h1><p><a href="index.html">254703910730</a> </p></div>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="training/index.html">Training Program</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li class="dropdown"><a href="#"><span>GET Motor Insurance</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><select id="underwriters" name="underwriters" onchange="location=this.value"></select></li>
+            </ul>
+          </li>
+          <!-- <li><a class="nav-link scrollto" href="#chasefarm"></a></li> -->
+          <!-- <li><a href="about.html">Blog</a></li> -->
+          
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="https://jendieplus.co.ke/dashboard/build/pages/sign-in.php">LOGNIN</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script>
+      let dropdown = $('#underwriters');
+      dropdown.empty();
+      dropdown.append('<option selected="true" disabled>Click to choose underwriter</option>');
+      dropdown.prop('selectedIndex', 0);
+      let url = 'https://jendieplus.co.ke/underwriters.php';
+      // Populate dropdown with list of provinces
+      $.getJSON(url, function (data) {
+          $.each(data, function (key, entry) {
+              console.log(entry);
+              dropdown.append($('<option></option>').attr({'value':"https://jendieplus.co.ke/processer/handle_index.php?q="+entry.ID}).text(entry.Name));
+          })
+      });
+  </script>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url(assets/img/slide/image001.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">GATWICK IN-HOUSE INSURANCE CONSULTANTS</h2>
+                <p class="animate__animated animate__fadeInUp">Putting our Insurance Profession into Practice
+                </p>
+                <div>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="background-image: url(assets/img/slide/image012.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">MOTOR INSURANCE</h2>
+                <p class="animate__animated animate__fadeInUp">We have automated our Motor Insurance processes for seamless operations </p>
+                <div>
+                  <a href="#services" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" style="background-image: url(assets/img/slide/image003.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">CLAIMS PRACTICE
+                </h2>
+                <p class="animate__animated animate__fadeInUp">We have a well structured training to understand key aspects of handling personal lines claims, not limited to motor                <div>
+                  <a href="#services" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!--about us-->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row no-gutters">
+          <!-- <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div> -->
+          <div class="col-xl-12 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch">
+            <div class="content d-flex flex-column justify-content-center">
+              <h4>   About Us
+              </h4>
+              <p>
+                Gatwick In-House Training Consultants firm was established in the year 2018, targeting beginers in the insurance industry, to train and instill within them sufficient job knowledge in the insurance industry that enables them to work with professionalism and confidence, not only to attract customers but also to reduce company expenses. We have an Insurance Agency that is licensed to Carry on General Insurance, Health Insurance and Life Assurance business within the Republic of Kenya. Chase Farm Insurance Agency has been licensed by Insurance Regulatory Authority and is an agent in Kenya, subject to the provision of the Insurance Act 1984.             </p>
+              <hr>
+              <h4>   Our Vision
+              </h4>
+              <p>
+                To provide our policyholders with quality insurance products and excellent services, assuring financial stability and longevity.              </p>
+              <hr>
+                <h4>   Our Mission
+                </h4>
+                <p>
+                  To bring the “Chase Farm Insurance Agency” brand of motor insurance to every single Kenyan and their families, regardless of status or standing in life towards financial security and peace of mind.Through Chase Farm Insurance Agency motor Insurance policy– no one left behind. Through top notch Insurance professional training courses and resources, we aim to continously increase insurance penetration. Our ultimate mission is to create success stories through having competent insurance workforce in the sector.             </p>
+                <hr>
+                <h4>   Our Core Values
+                </h4>
+                <div class="row">
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-atom"></i>
+                  <h4>   Fairness
+                  </h4>
+                  <p>Giving back to our clients, employees, and suppliers what is due to them</p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-user-check"></i>
+                  <h4>   Loyalty
+                  </h4>
+                  <p>Building a team that shares and upholds the Company’s aspirations, vision, mission and values</p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-transfer"></i>
+                  <h4>   Integrity
+                  </h4>
+                  <p>Operating under the highest forms of business conduct, we are honest and trustworthy. We believe in possessing and adhering to high moral principles or professional standards</p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-group"></i>
+                  <h4>   Teamwork
+                  </h4>
+                  <p>Creating a strategy-focused organization that works together towards attaining Chase Farm Insurance Agency’s vision-mission statements </p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-layer-plus"></i>
+                  <h4>   Service Excellence
+                  </h4>
+                  <p>Providing the highest quality services, meeting our clients’ needs efficiently and promptly at par with industry standards</p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-health"></i>
+                  <h4>   Adaptability
+                  </h4>
+                  <p>Flexibility in meeting changes and challenges in the ever evolving business environment </p>
+                </div>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="about">
+      <div class="container">
+
+        <div class="row no-gutters">
+          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div>
+          <div class="col-xl-7 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch">
+            <div class="content d-flex flex-column justify-content-center">
+              <h3>   Our Services
+              </h3>
+              <p>
+                <!-- Training presents a prime opportunity to expand the knowledge base of all employees, but many employers find the development opportunities expensive. Employees also miss out on work time while attending training sessions, which may delay the completion of projects. Despite the potential drawbacks, training and development provides both the company as a whole and the individual employees with benefits that make the cost and time a worthwhile investment.              </p> -->
+              <div class="row">
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-book-content"></i>
+                  <h4>   Training
+                  </h4>
+                  <p>We have a structured training and development program that ensures that employees have a consistent experience and background knowledge. A training program allows everyone to strengthen on skills that each employee needs to improve on. We understand that having insurance knowledge is power hence we offer strategic training programs which is normally tailored to meet the expectations of all clients.</p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-detail"></i>
+                  <h4>   Claims Handling
+                  </h4>
+                  <p>The sole purpose of having an insurance cover is for it to eventually put the insured back to their normal position they occupied before an accident or illness occurred. We assist our clients to make claim applications, get the right information and documents required to make a claim and eventually follow it up with the insurance companies to make sure that the claim is eventually settled amicably to the satisfaction of the insured. </p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-car"></i>
+                  <h4>   Motor Insurance
+                  </h4>
+                  <p>Insurance companies provide insurance protection against accidental loss or damage to personal private motor vehicles including the standard accessories and spare parts whilst thereon as well as protection against legal liability to third parties. We offer cover on all types of motor insurance risks and have automated the processes to ensure all our clients get their Motor Insurance Cover Instantly through clicking GET MOTOR INSURANCE. </p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-cart-download"></i>
+                  <h4>   WIBA (Work Benefits ACt)
+                  </h4>
+                  <p>Work Injury Benefits Act 2007 provides for compensation to employees for work related injuries and diseases contracted in the course of the time of employment. </p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-cart-add"></i>
+                  <h4>   Employer's Personal Accident
+                  </h4>
+                  <p>We have two types:- Group and Student Personal Accident. 
+ 
+                    Group personal accident cover is taken by corporates and institutions. It afford compensation for death, permanent disablement, temporary loss of income due to disablement and medical expenses arising from an accident.
+                    
+                    Student Personal Accident. This cover is designed for primary school, secondary school and university students against the financial consequences of accidents. 
+                    </p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-cart"></i>
+                  <h4>   Contractor's All Risk
+                  </h4>
+                  <p>Covers the contractor for loss or damage from insured perils that may occur during the course of construction (of buildings, roads, bridges, dams, and other like structure)</p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-train"></i>
+                  <h4>   Travel Insurance
+                  </h4>
+                  <p>Travel insurance has been tailored to meet all needs of students, groups, individuals and corporate business travellers. For peace of mind in a foreign environment do not leave home without your travel guard insurance cover. It is tailored to cover accidental injuries, medical expenses, losses of personal effects and travel delays, hijack, personal liability and legal expenses etc.</p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-gas-pump"></i>
+                  <h4>   Fire & Perils Insurance
+                  </h4>
+                  <p>The basic fire policy provides indemnity against loss or damage to property described, caused by fire, lightening and explosion. However, the policy can also be extended to cover riot, strike, malicious damage, storm, earthquakes, impact by vehicles, aircraft and other aerial devices, subterranean fire, spontaneous combustion, explosion of industrial boilers and economizers, flooding, water damage due to bursting or overflowing of water tanks, apparatus and pipes. </p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-arch"></i>
+                  <h4>   Property Terrorism & Sabotage Insurance
+                  </h4>
+                  <p>The cover has been specifically designed to cover the sabotage, terrorism, mutiny, rebellion, insurrection and coup d’états (excluding war and civil war) risks faced by multinational companies operating in countries where these risks are normally excluded standard insurance programs. Coverage for strike, riot and civil commotion can be included by endorsement.The cover has been specifically designed to cover the sabotage, terrorism, mutiny, rebellion, insurrection and coup d’états (excluding war and civil war) risks faced by multinational companies operating in countries where these risks are normally excluded standard insurance programs. Coverage for strike, riot and civil commotion can be included by endorsement</p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-layout"></i>
+                  <h4>  Public Liability Insurance
+                  </h4>
+                  <p>Cover provides protection against claims arising from:
+                    ▪ Accidental bodily injury to any person
+                    ▪ Accidental loss of or damage to property
+                    
+                    Happening in connection with the business and occurring within the territorial limits described and happening during the period of insurance. Since the promise to indemnify is the basis of the policy, strictly speaking insurers are not liable to make payment until the insured has been found "legally liable" to pay for the damages.
+                    </p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-money"></i>
+                  <h4>   Banker's Blanket Bond Insurance
+                  </h4>
+                  <p>Banks and other financial institutions face a higher level of exposure to financial loss resulting from criminal behavior than most other institutions. Employee theft, embezzlement, forgery hold up and fraud are all real risks in today’s business environment and even more so in the financial sector. The bankers blanket bond policy addresses these risks. As the name implies this is a comprehensive crime and fidelity package designed specifically for banks and other financial institutions.</p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-folder-plus"></i>
+                  <h4>   Other Services
+                  </h4>
+                  <p>Other services we offer are insurance covers on: Domestic package, Goods in transit Insurance, Carrie’s Liability, Medical/Health, Hospital Cash, Professional indemnity, All types of Liability Insurance cover, Kidnap & Ransom Insurance, Evacuation & Repatriation Insurance,  Fidelity Guarantee Insurance, Stock Floater Insurance, Consequential Loss Insurance,  Combined Insurance, Erection All Risk Insurance, Marine Cargo Insurance, Machine Breakdown Insurance, Plate Glass Insurance, Money Insurance, Computer & Electronic Insurance, Industrial All Risk Insurance, All Risk Insurance and Burglary Insurance </p>
+                </div>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+    <main id="main">
+      <!--about us-->
+      <section id="pricing" class="pricing">
+        <div class="container"
+          <div class="row no-gutters">
+            <!-- <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div> -->
+            <div class="col-xl-12 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch">
+              <div class="content d-flex flex-column justify-content-center">
+               
+                  <h3>   Our Pricing Training Topics Include:
+                  </h3>
+                  <div class="row">
+                    
+                  <div class="col-md-6 icon-box">
+                    <i class="bx bx-receipt"></i>
+                    <h4>   Insurance Law
+                    </h4>
+                    <p>Basic understanding of how insurance operates within the legal framework is important.</p>
+                  </div>
+                  <div class="col-md-6 icon-box">
+                    <i class="bx bx-world"></i>
+                    <h4>   Marketing Insurance Products and Services
+                    </h4>
+                    <p>Building a team that shares and upholds the Company’s aspirations, vision, mission and values</p>
+                  </div>
+                  <div class="col-md-6 icon-box">
+                    <i class="bx bx-briefcase"></i>
+                    <h4>   Underwriting Practice
+                    </h4>
+                    <p>Operating under the highest forms of business conduct, we are honest and trustworthy. We believe in possessing and adhering to high moral principles or professional standards</p>
+                  </div>
+                  <div class="col-md-6 icon-box">
+                    <i class="bx bx-car"></i>
+                    <h4>   Motor Insurance
+                    </h4>
+                    <p>Understanding the differetnt classes of motor insurance and how we use technology to make the processes seamless. </p>
+                  </div>
+                  <div class="col-md-6 icon-box">
+                    <i class="bx bx-home-heart"></i>
+                    <h4>   Longterm Insurance Business
+                    </h4>
+                    <p>Providing the highest quality services, meeting our clients’ needs efficiently and promptly at par with industry standards</p>
+                  </div>
+                  <div class="col-md-6 icon-box">
+                    <i class="bx bx-shield"></i>
+                    <h4>   Liability Insurance
+                    </h4>
+                    <p>Understanding the different types of liablity insurance and how professionals can gain adequate knowledge  </p>
+
+                  </div>
+                  <div class="col-md-6 icon-box">
+                    <i class="bx bx-detail"></i>
+                    <h4>   Claims Practice
+                    </h4>
+                    <p>Claims is a critical area in the insurance industry as it considers the practical aspects of handling a claim; from receipt to settlement. Understanding the concepts and how to efficienty handle the process breeds client retention and customer experience </p>
+
+                  </div>
+                  <div class="col-md-6 icon-box">
+                    <i class="bx bx-male"></i>
+                    <h4>   Personal Insurances
+                    </h4>
+                    <p>We have different personal insurances hence designing a specific insurance for each client is important </p>
+
+                  </div>
+                </div><div class="fusion-clearfix"></div></div></div><div class="fusion-layout-column fusion_builder_column fusion-builder-column-6 fusion_builder_column_1_4 1_4 fusion-one-fourth fusion-column-last" style="width:25%;width:calc(25% - ( ( 4% + 4% + 4% ) * 0.25 ) );margin-top:0px;margin-bottom:20px;"><div class="fusion-column-wrapper fusion-flex-column-wrapper-legacy" style="background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;padding: 0px 0px 0px 0px;"><div class="fusion-fa-align-center"><i class="fb-icon-element-4 fb-icon-element fontawesome-icon fa-dollar-sign fas circle-no" style="font-size:70px;"></i></div><style>i.fb-icon-element.fontawesome-icon.fb-icon-element-4{ color: #f93958;}i.fb-icon-element.fontawesome-icon.fb-icon-element-4:hover { color: #282828;}</style><div class="fusion-text fusion-text-6"><p style="text-align: center;"><span style="color: #f93958;">
+                  </div><div class="fusion-clearfix"></div></div></div></div></div><div class="fusion-fullwidth fullwidth-box fusion-builder-row-2 nonhundred-percent-fullwidth non-hundred-percent-height-scrolling fusion-no-small-visibility" style="background-color: #282828;background-position: center center;background-repeat: no-repeat;padding-top:20px;padding-right:30px;padding-bottom:20px;padding-left:30px;margin-bottom: 0px;margin-top: 0px;border-width: 0px 0px 0px 0px;border-color:#eae9e9;border-style:solid;" ><div class="fusion-builder-row fusion-row"><div class="fusion-layout-column fusion_builder_column fusion-builder-column-7 fusion_builder_column_1_3 1_3 fusion-one-third fusion-column-first" style="width:33.333333333333%;width:calc(33.333333333333% - ( ( 4% + 4% + 4% ) * 0.33333333333333 ) );margin-right: 4%;margin-top:0px;margin-bottom:20px;"><div class="fusion-column-wrapper fusion-flex-column-wrapper-legacy" style="background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;padding: 0px 0px 0px 0px;"><div class="fusion-sep-clear"></div><div class="fusion-separator fusion-full-width-sep" style="margin-left: auto;margin-right: auto;margin-top:25px;width:100%;"></div><div class="fusion-sep-clear"></div><div class="fusion-text fusion-text-7"><h3 style="text-align: right; color: #fff; font-weight: bold;"><br />
+              
+                  </div>
+                    <div class="fusion-clearfix"></div></div></div><div class="fusion-layout-column fusion_builder_column fusion-builder-column-10 fusion_builder_column_1_3 1_3 fusion-one-third fusion-column-last" ></div><div  style="background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;padding: 0px 0px 0px 0px;"><div class="fusion-sep-clear"></div><div class="fusion-separator fusion-full-width-sep" style="margin-left: auto;margin-right: auto;margin-top:0px;width:100%;"></div><div class="fusion-sep-clear"></div><div class="fusion-text fusion-text-8"><h3 style="text-align: center; color: #fff; font-weight: bold;">For More Information On Our Pricing Services</h3>
+                    <div class="fusion-clearfix"></div></div></div><div class="fusion-layout-column fusion_builder_column fusion-builder-column-10 fusion_builder_column_1_3 1_3 fusion-one-third fusion-column-last" ></div><div  style="background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;padding: 0px 0px 0px 0px;"><div class="fusion-sep-clear"></div><div class="fusion-separator fusion-full-width-sep" style="margin-left: auto;margin-right: auto;margin-top:0px;width:100%;"></div><div class="fusion-sep-clear"></div><div class="fusion-text fusion-text-8"><a class="fusion-button button-flat fusion-button-default-size button-custom button-2 fusion-button-default-span fusion-button-default-type" target="_self" href="#contact"><span class="fusion-button-text"><h4 style="text-align: center; color: #008000; font-weight: bold;">CONTACT US</h4>                    
+                  </div>
+                </div>
+              </div>
+        
+                </div>
+              </div><!-- End .content-->
+            </div>
+          </div>
+        </div>
+      </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Gatwick</h3>
+              <p>
+                Pre Area House, Duruma House<br>
+                P. O. Box 54705 - 00200, Nairobi, Kenya.<br><br>
+                <strong id="contact">Phone:</strong> {+254} 2333152 <br>
+                <strong>Mobile:</strong> {+254} 780683000, 703910730 <br>
+                <strong>Email:</strong> gatwickinhouse.i.c@gmail.com <br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="https://twitter.com/george_onsomu" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.facebook.com/home.php" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/onsomu-george-monyoncho-dip-cii-7a77b196" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Training</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Claims Handling</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Motor Insurance</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">WIBA</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Underwriting</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Enter your email below to subscribe to our newslater</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Gatwick</span></strong>. All Rights Reserved @2022
+      </div>
+      <div class="credits">
+      
+        Designed by <a href="https://jendieplus.co.ke/">JendiePlus Technologies</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/634d25b0daff0e1306d2605e/1gfilmeq9';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

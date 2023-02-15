@@ -1,0 +1,105 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Gatwig deployment pipeline. 
+Parameters:
+  RepoName:
+    Description: Name of the repository
+    Type: String
+    Default: gatwick
+  RepoDesc:
+    Description: Description of the repository
+    Type: String
+    Default: Gatwick code container
+Resources:
+  MyRepository:
+    Type: 'AWS::CodeCommit::Repository'
+    Properties:
+      RepositoryName: !Ref RepoName
+      RepositoryDescription: !Ref RepoDesc
+  MyPipeline: 
+    Type: AWS::CodePipeline::Pipeline 
+    Properties: 
+      RoleArn:
+        Ref: CodePipelineServiceRole 
+      Stages: 
+        - Name: Source 
+          Actions: 
+            - Name: Source
+              ActionTypeId:
+                Category: Source
+                Owner: AWS
+                Provider: CodeCommit
+                Version: 1
+              Configuration:
+                RepositoryName: !Ref CodeCommitRepository
+                BranchName: master
+              OutputArtifacts:
+                - Name: SourceArtifact
+              RunOrder: 1
+        - 
+          Name: Beta 
+          Actions: 
+            - 
+              Name: BetaAction 
+              InputArtifacts: 
+                -
+                  Name: SourceOutput 
+              ActionTypeId: 
+                Category: Deploy 
+                Owner: AWS 
+                Version: 1 
+                Provider: CodeDeploy
+              Configuration: 
+                ApplicationName: 
+                  Ref: ApplicationName 
+                DeploymentGroupName: 
+                  Ref: DeploymentGroupName 
+              RunOrder: 1 
+        - 
+          Name: Release 
+          Actions: 
+            - 
+              Name: ReleaseAction
+              InputArtifacts: 
+                - 
+                  Name: SourceOutput 
+              ActionTypeId: 
+                Category: Deploy 
+                Owner: AWS 
+                Version: 1
+                Provider: CodeDeploy 
+              Configuration: 
+                ApplicationName: 
+                  Ref: ApplicationName
+                DeploymentGroupName: 
+                  Ref: DeploymentGroupName 
+              RunOrder: 1 
+      ArtifactStore: 
+        Type: S3 
+        Location:
+          Ref: ArtifactStoreS3Location 
+        EncryptionKey:
+          Id: arn:aws:kms:useast-1:ACCOUNT-ID:key/KEY-ID
+          Type: KMS
+      DisableInboundStageTransitions: 
+        - 
+          StageName: Release 
+          Reason: "Disabling the transition until integration tests are completed"
+      Tags:
+        - Key: Project
+          Value: ProjectA
+        - Key: IsContainerBased
+          Value: 'true'
+Outputs:
+  MyRepositoryName:
+    Value: !GetAtt MyRepository.Name
+    Description: The HTTPS clone URL of the created CodeCommit repository
+  MyRepositoryCloneUrlHttp:
+    Value: !GetAtt MyRepository.CloneUrlHttp
+    Description: The HTTP clone URL of the created CodeCommit repository
+  MyRepositoryCloneUrlSsh:
+    Value: !GetAtt MyRepository.CloneUrlSsh
+    Description: The SSH clone URL of the created CodeCommit repository
+  MyRepositoryCloneUrlHttps:
+    Value: !GetAtt MyRepository.Arn
+    Description: The HTTPS clone URL of the created CodeCommit repository
+

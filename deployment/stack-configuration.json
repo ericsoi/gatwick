@@ -1,0 +1,9 @@
+{
+  "Parameters" : {
+    "DBName" : "ipos",
+    "DBPassword" : "Jendieplus!@34",
+    "DBRootPassword" : "Jendieplus!@34",
+    "DBUser" : "jendieplus",    
+    "KeyName" : "jplusKey"
+  }
+}
